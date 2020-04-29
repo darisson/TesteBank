@@ -14,20 +14,14 @@ import com.data.source.remote.api.ApiResult
 import com.presentation.ui.home.adapter.StatementsAdapter
 import com.presentation.ui.home.utils.formatAgency
 import com.presentation.ui.home.utils.formatToMonetary
-import com.presentation.ui.home.viewmolde.HomeViewModel
+import com.presentation.ui.home.viewmoldel.HomeViewModel
 import com.presentation.ui.login.view.LoginActivity
+import kotlinx.android.synthetic.main.activity_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class HomeActivity : AppCompatActivity() {
 
     private val viewModel: HomeViewModel by viewModel()
-
-    private val txtUserName: TextView by lazy { findViewById<TextView>(R.id.txtUserName) }
-    private val btnLogout: ImageView by lazy { findViewById<ImageView>(R.id.btnLogout) }
-    private val txtAccount: TextView by lazy { findViewById<TextView>(R.id.txtAccount) }
-    private val txtBalance: TextView by lazy { findViewById<TextView>(R.id.txtBalance) }
-    private val pbLoading: ProgressBar by lazy { findViewById<ProgressBar>(R.id.pbLoading) }
-    private val rvStatements: RecyclerView by lazy { findViewById<RecyclerView>(R.id.rvStatements) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,23 +34,23 @@ class HomeActivity : AppCompatActivity() {
 
     private fun observerStatementsResponse() {
         viewModel.liveDataResponse.observe(this, Observer {
-            pbLoading.visibility = View.GONE
+            progressLoad.visibility = View.GONE
             if (it is ApiResult.Success) {
-                rvStatements.adapter = StatementsAdapter(this, it.response)
+                recyclerStatements.adapter = StatementsAdapter(this, it.response)
             }
         })
     }
 
     private fun setupLoginParam() {
         viewModel.getUser()?.let {
-            txtUserName.text = it.name
+            textUser.text = it.name
             txtAccount.text = "${it.bankAccount} / ${it.agency.formatAgency()}"
             txtBalance.text = it.balance.formatToMonetary()
         }
     }
 
     private fun setupViews() {
-        btnLogout.setOnClickListener {
+        logout_btn.setOnClickListener {
             viewModel.logout()
             setupLoginActivity()
         }

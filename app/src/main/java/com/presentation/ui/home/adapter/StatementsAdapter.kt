@@ -30,7 +30,7 @@ class StatementsAdapter(private val context: Context,
 
         private val txtPayment: TextView by lazy { itemView.findViewById<TextView>(R.id.txtPayment) }
         private val txtAccount: TextView by lazy { itemView.findViewById<TextView>(R.id.txtAccount) }
-        private val txtDesc: TextView by lazy { itemView.findViewById<TextView>(R.id.txtDesc) }
+        private val txtDesc: TextView by lazy { itemView.findViewById<TextView>(R.id.txtDescricao) }
         private val txtTitle: TextView by lazy { itemView.findViewById<TextView>(R.id.txtTitle) }
 
         fun bindView(statement: Statement) {

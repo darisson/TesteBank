@@ -1,4 +1,4 @@
-package com.presentation.ui.home.viewmolde
+package com.presentation.ui.home.viewmoldel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -6,7 +6,7 @@ import com.data.source.local.SharedPreferencesManager
 import com.data.source.remote.retrofit.RetrofitConfiguration
 import com.domain.usercase.HomeUserCase.HomeUserCase
 import com.domain.usercase.loginUserCase.LoginUserCase
-import com.presentation.ui.home.viewmolde.HomeViewModel
+import com.presentation.ui.home.viewmoldel.HomeViewModel
 import com.presentation.ui.login.viewmodel.LoginViewModel
 import org.koin.android.ext.koin.androidApplication
 import org.koin.android.viewmodel.ext.koin.viewModel

@@ -20,36 +20,36 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        setupViews()
-        observerLoginResponse()
-        checkHasUser()
+        checkingViews()
+        LoginResponse()
+        checkUserAndCallHomeActivity()
     }
 
-    private fun checkHasUser() {
+    private fun checkUserAndCallHomeActivity() {
         viewModel.getUser()?.let {
-            setupHomeActivity()
+            GoToHomeActivity()
         }
     }
 
-    private fun observerLoginResponse() {
+    private fun LoginResponse() {
         viewModel.liveDataResponse.observe(this, Observer {
             group_progress.visibility = View.GONE
             if (it is ApiResult.Success) {
                 viewModel.saveUserPreferences(it.response.userAccount)
-                setupHomeActivity()
+                GoToHomeActivity()
             } else if (it is ApiResult.Error){
                 Toast.makeText(this, it.throwable.message, Toast.LENGTH_LONG).show()
             }
         })
     }
 
-    private fun setupHomeActivity() {
+    private fun GoToHomeActivity() {
         val intent = Intent(this, HomeActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
 
-    private fun setupViews() {
+    private fun checkingViews() {
         btn_login.setOnClickListener {
             if (!viewModel.isValidateUserField(loginUser.text.toString())) {
                 loginUser.error = ("Usuario Invalido")

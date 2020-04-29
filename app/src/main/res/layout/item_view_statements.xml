@@ -42,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtDesc"
+            android:id="@+id/txtDescricao"
             android:layout_marginTop="15dp"
             android:textColor="@android:color/black"
             android:textSize="16sp"
@@ -56,8 +56,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/txtAccount"
             tools:text="R$ 1.000,00"
-            app:layout_constraintBottom_toBottomOf="@+id/txtDesc"
-            app:layout_constraintTop_toTopOf="@+id/txtDesc"
+            app:layout_constraintBottom_toBottomOf="@+id/txtDescricao"
+            app:layout_constraintTop_toTopOf="@+id/txtDescricao"
             app:layout_constraintEnd_toEndOf="@+id/txtPayment"
             />
 

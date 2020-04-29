@@ -37,25 +37,25 @@ class LoginViewModelTest {
 
     @Test
     fun isValidateUserField() {
-        val cpf = "270.018.580-30"
+        val cpf = "061.265.333.13"
         junit.framework.Assert.assertEquals(loginViewModel.isValidateUserField(cpf), true)
     }
 
     @Test
     fun isValidPasswordField() {
-        val password = "Dev@dev1602"
+        val password = "Dari@123"
         junit.framework.Assert.assertEquals(loginViewModel.isValidPasswordField(password), true)
     }
 
     @Test
     fun `checkValidEmail$app_debug`() {
-        val email = "dev@gmail.com"
+        val email = "darissonbraga@gmail.com"
         junit.framework.Assert.assertEquals(loginViewModel.checkValidEmail(email), true)
     }
 
     @Test
     fun `checkCpf$app_debug`() {
-        val cpf = "270.018.580-30"
+        val cpf = "061.265.333.13"
         junit.framework.Assert.assertEquals(loginViewModel.checkCpf(cpf), true)
     }
 
