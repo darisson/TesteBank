@@ -8,9 +8,9 @@
     tools:context="com.presentation.ui.login.view.LoginActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img_logo"
         android:layout_width="125dp"
         android:layout_height="70dp"
-        android:id="@+id/imgLogo"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="56dp"
@@ -19,49 +19,49 @@
     </androidx.appcompat.widget.AppCompatImageView>
 
     <EditText
+        android:id="@+id/loginUser"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:maxLines="1"
         android:inputType="text"
-        android:id="@+id/edtUserLogin"
-        android:background="@drawable/edt_bordered"
+        android:background="@drawable/shape_borda"
         android:layout_marginTop="105dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:paddingStart="13dp"
         android:paddingEnd="13dp"
-        app:layout_constraintTop_toBottomOf="@+id/imgLogo"
+        app:layout_constraintTop_toBottomOf="@+id/img_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="User">
     </EditText>
 
     <EditText
+        android:id="@+id/passwordEdit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/edtPasswordLogin"
         android:maxLines="1"
-        android:background="@drawable/edt_bordered"
+        android:background="@drawable/shape_borda"
         android:inputType="textPassword"
         android:layout_marginTop="21dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:paddingStart="13dp"
         android:paddingEnd="13dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtUserLogin"
+        app:layout_constraintTop_toBottomOf="@+id/loginUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:hint="Password">
     </EditText>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
         android:layout_width="202dp"
         android:layout_height="62dp"
         android:text="Login"
-        android:id="@+id/btnLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="52dp"
         android:textSize="16sp"
         app:backgroundTint="@color/appBlue"
         android:textColor="@android:color/white"
@@ -80,19 +80,20 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ProgressBar
+        android:id="@+id/pbLoadingLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/pbLoadingLogin"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="invisible"/>
 
     <androidx.constraintlayout.widget.Group
+        android:id="@+id/group_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:id="@+id/groupProgress"
         android:visibility="gone"
         app:constraint_referenced_ids="pbLoadingLogin,viewFocused">
 
