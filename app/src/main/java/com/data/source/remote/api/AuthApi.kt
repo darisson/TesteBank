@@ -9,7 +9,7 @@ interface AuthApi {
 
     @POST("login")
     @FormUrlEncoded
-    fun loginAsync(@Field("user") user: String, @Field("password") password:String): Call<ResponseLogin>
+    fun login(@Field("user") user: String, @Field("password") password:String): Call<ResponseLogin>
 
     @GET("statements/{id}")
     fun getStatements(@Path("id") id: String): Call<ResponseStatement>

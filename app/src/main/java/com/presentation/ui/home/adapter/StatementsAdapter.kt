@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.br.myapplication.R
 import com.domain.model.Statement
-import com.presentation.ui.home.utils.formatDateString
+import com.presentation.ui.home.utils.dateFormat
 import com.presentation.ui.home.utils.formatToMonetary
 
 class StatementsAdapter(private val context: Context,
@@ -35,7 +35,7 @@ class StatementsAdapter(private val context: Context,
 
         fun bindView(statement: Statement) {
             txtAccount.text = statement.value.formatToMonetary()
-            txtPayment.text = statement.date.formatDateString()
+            txtPayment.text = statement.date.dateFormat()
             txtDesc.text = statement.desc
             txtTitle.text = statement.title
         }

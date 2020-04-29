@@ -7,6 +7,6 @@ import com.domain.usercase.BaseUserCasae.BaseUserCase
 
 class HomeUserCase(private val homeRepository: HomeRepository) : BaseUserCase<List<Statement>, HomeUserCase.Params>() {
 
-    override suspend fun run(param: Params): ApiResult<List<Statement>> = homeRepository.getStatements(param.userID)
+    override suspend fun execute(param: Params): ApiResult<List<Statement>> = homeRepository.getStatements(param.userID)
     data class Params(val userID: String)
 }

@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name="com.presentation.ui.home.view.HomeActivity"></activity>
 
-        <activity android:name="com.presentation.ui.login.view.LoginActivity">
+        <activity android:name="com.presentation.ui.login.view.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

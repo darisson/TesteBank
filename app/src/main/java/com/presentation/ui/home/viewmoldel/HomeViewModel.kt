@@ -2,7 +2,7 @@ package com.presentation.ui.home.viewmoldel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.data.source.local.AppHelper
+import com.data.source.helper.AppHelper
 import com.data.source.local.SharedPreferencesManager
 import com.data.source.remote.api.ApiResult
 import com.domain.model.Statement
@@ -24,7 +24,7 @@ class HomeViewModel(private val homeUserCase: HomeUserCase,
     }
 
     fun getUser() : UserAccount? {
-        val userString = sharedPreferencesManager.retrieveUser()
+        val userString = sharedPreferencesManager.recoverUser()
         return userString?.let {
             return AppHelper.convertStringToObj(it, UserAccount::class.java)
         }

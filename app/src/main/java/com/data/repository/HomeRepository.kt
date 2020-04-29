@@ -11,7 +11,7 @@ class HomeRepository (private val authApi: AuthApi){
         return try {
             val result = authApi.getStatements(id).execute()
             if (result.isSuccessful) { result.body()?.let { return ApiResult.Success(it.statementList) } }
-            ApiResult.Error(Throwable("Erro genérico de API"))
+            ApiResult.Error(Throwable("API Error"))
         } catch (e: Exception) {
             ApiResult.Error(e)
         }

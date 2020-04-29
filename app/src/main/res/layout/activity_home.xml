@@ -23,7 +23,7 @@
         android:layout_marginStart="18dp"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/white"
-        tools:text="Jose da Silva Teste"
+        android:text="@string/jose_da_silva_teste_texto"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -47,7 +47,7 @@
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="@+id/textUser"
         app:layout_constraintTop_toBottomOf="@+id/textUser"
-        android:text="Conta" />
+        android:text="@string/conta_texto" />
 
 
     <TextView
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
-        tools:text="2050/ 01.111222-4"
+        android:text="@string/conta_txt_layout"
         android:textSize="25sp"
         app:layout_constraintStart_toStartOf="@+id/txtDescricao"
         android:textColor="@android:color/white"
@@ -67,7 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
-        android:text="Saldo"
+        android:text="@string/saldo"
         android:textColor="@android:color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/txtAccount"
@@ -78,7 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="25sp"
-        tools:text="R$ 1.000,00"
+        android:text="@string/balance_text"
         android:layout_marginTop="7dp"
         android:paddingBottom="17dp"
         android:textColor="@android:color/white"
@@ -98,7 +98,7 @@
         android:id="@+id/balanceRecent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recentes"
+        android:text="@string/recentes"
         android:layout_marginTop="14dp"
         android:textSize="17sp"
         app:layout_constraintStart_toStartOf="@+id/txtBalance"

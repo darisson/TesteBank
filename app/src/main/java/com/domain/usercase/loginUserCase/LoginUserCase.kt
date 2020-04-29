@@ -8,7 +8,7 @@ import com.domain.usercase.BaseUserCasae.BaseUserCase
 class LoginUserCase(private val authRepository: AuthRepository) :
     BaseUserCase<ResponseLogin, LoginUserCase.Params>() {
 
-    override suspend fun run(param: Params): ApiResult<ResponseLogin> = authRepository.doLogin(param.user, param.password)
+    override suspend fun execute(param: Params): ApiResult<ResponseLogin> = authRepository.doLogin(param.user, param.password)
 
     data class Params(val user: String, val password:String)
 }

@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.presentation.ui.login.view.LoginActivity">
+    tools:context="com.presentation.ui.login.view.AuthActivity">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/img_logo"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/img_logo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="User">
+        android:hint="@string/user">
     </EditText>
 
     <EditText
@@ -51,14 +51,14 @@
         app:layout_constraintTop_toBottomOf="@+id/loginUser"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:hint="Password">
+        android:hint="@string/password">
     </EditText>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_login"
         android:layout_width="202dp"
         android:layout_height="62dp"
-        android:text="Login"
+        android:text="@string/login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="52dp"

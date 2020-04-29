@@ -1,7 +1,7 @@
 package com.example.testebankdarisson.home
 
 import com.presentation.ui.home.utils.formatAgency
-import com.presentation.ui.home.utils.formatDateString
+import com.presentation.ui.home.utils.dateFormat
 import com.presentation.ui.home.utils.formatToMonetary
 import org.junit.Assert
 import org.junit.Test
@@ -21,7 +21,7 @@ class HomeExtensionTest {
 
     @Test
     fun formatDateString() {
-        val date = "2018-07-25"
-        Assert.assertEquals(date.formatDateString(), "25/07/2018")
+        val date = "2020-04-29"
+        Assert.assertEquals(date.dateFormat(), "29/04/2020")
     }
 }

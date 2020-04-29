@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtTitle"
-            tools:text="Pagamento"
+            android:text="@string/pagamento"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="18dp"
@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtPayment"
-            tools:text="12/12/2018"
+            android:text="@string/data_texto"
             android:textSize="12sp"
             android:layout_marginEnd="16dp"
             android:textColor="@color/color_A8B4C4"
@@ -49,13 +49,13 @@
             android:paddingBottom="8dp"
             app:layout_constraintStart_toStartOf="@+id/txtTitle"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle"
-            tools:text="Conta da luz" />
+            android:text="@string/label_conta_da_luz"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/txtAccount"
-            tools:text="R$ 1.000,00"
+            android:text="@string/label_conta_item"
             app:layout_constraintBottom_toBottomOf="@+id/txtDescricao"
             app:layout_constraintTop_toTopOf="@+id/txtDescricao"
             app:layout_constraintEnd_toEndOf="@+id/txtPayment"

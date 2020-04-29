@@ -37,14 +37,14 @@ class LoginViewModelTest {
 
     @Test
     fun isValidateUserField() {
-        val cpf = "061.265.333.13"
-        junit.framework.Assert.assertEquals(loginViewModel.isValidateUserField(cpf), true)
+        val cpf = "793.599.650-49"
+        junit.framework.Assert.assertEquals(loginViewModel.validateUser(cpf), true)
     }
 
     @Test
     fun isValidPasswordField() {
         val password = "Dari@123"
-        junit.framework.Assert.assertEquals(loginViewModel.isValidPasswordField(password), true)
+        junit.framework.Assert.assertEquals(loginViewModel.validatePassword(password), true)
     }
 
     @Test
@@ -55,21 +55,21 @@ class LoginViewModelTest {
 
     @Test
     fun `checkCpf$app_debug`() {
-        val cpf = "061.265.333.13"
+        val cpf = "793.599.650-49"
         junit.framework.Assert.assertEquals(loginViewModel.checkCpf(cpf), true)
     }
 
     @Test
     fun validateLogin()  = coroutineRule.runBlockingTest{
-        val params = LoginUserCase.Params("06126533313", "Dari@123")
+        val params = LoginUserCase.Params("793.599.650-49", "Dari@123")
         val userAccount = UserAccount("1", "teste", "92500", "1234", 500.00)
         val response = ResponseLogin(userAccount, com.domain.error.Error("", ""))
 
-        whenever(loginUsercaseMock.run(params)).thenReturn(ApiResult.Success(response))
+        whenever(loginUsercaseMock.execute(params)).thenReturn(ApiResult.Success(response))
 
         //whenever(loginUsercaseMock.invoke()).thenReturn(ApiResult.Success(response))
 
-        loginViewModel.doLogin("06126533313", "Dari@123")
+        loginViewModel.doLogin("793.599.650-49", "Dari@123")
 
 
         verify(loginUsercaseMock, times(1)).invoke(params, {apiResult: ApiResult<ResponseLogin> ->  })

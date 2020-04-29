@@ -3,7 +3,7 @@ package com.presentation.ui.login.viewmodel
 import androidx.core.util.PatternsCompat
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.data.source.local.AppHelper
+import com.data.source.helper.AppHelper
 import com.data.source.local.SharedPreferencesManager
 import com.data.source.remote.api.ApiResult
 import com.data.source.remote.dto.ResponseLogin
@@ -25,7 +25,7 @@ class LoginViewModel(private val loginUserCase: LoginUserCase,
     }
 
     fun getUser() : UserAccount? {
-        val userString = sharedPreferencesManager.retrieveUser()
+        val userString = sharedPreferencesManager.recoverUser()
         return userString?.let {
             return AppHelper.convertStringToObj(it, UserAccount::class.java)
         }
@@ -35,9 +35,9 @@ class LoginViewModel(private val loginUserCase: LoginUserCase,
         sharedPreferencesManager.saveUser(AppHelper.convertObjToString(userAccount))
     }
 
-    fun isValidateUserField(user: String) : Boolean = checkCpf(user) || checkValidEmail(user)
+    fun validateUser(user: String) : Boolean = checkCpf(user) || checkValidEmail(user)
 
-    fun isValidPasswordField(password: String) : Boolean {
+    fun validatePassword(password: String) : Boolean {
         val pattern: Pattern = Pattern.compile(REGEX_PASSWORD_PATTERN)
         val matcher: Matcher = pattern.matcher(password)
         return matcher.matches()

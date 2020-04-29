@@ -17,7 +17,7 @@ class SharedPreferencesManager(context: Context) {
         editor.apply()
     }
 
-    fun retrieveUser() : String? = sharedPref.getString(USER_KEY, "")
+    fun recoverUser() : String? = sharedPref.getString(USER_KEY, "")
 
     fun clearPreferences() = sharedPref.edit().clear().apply()
 

@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">testeBankDarisson</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="jose_da_silva_teste_texto">Jose da Silva Teste</string>
+    <string name="conta_texto">Conta</string>
+    <string name="conta_txt_layout">2050/ 01.111222-4</string>
+    <string name="saldo">Saldo</string>
+    <string name="balance_text">R$ 1.000,00</string>
+    <string name="recentes">Recentes</string>
+    <string name="pagamento">Pagamento</string>
+    <string name="data_texto">12/12/2018</string>
+    <string name="label_conta_da_luz">Conta da luz</string>
+    <string name="label_conta_item">R$ 1.000,00</string>
 </resources>

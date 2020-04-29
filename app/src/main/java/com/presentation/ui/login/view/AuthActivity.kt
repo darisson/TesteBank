@@ -13,7 +13,7 @@ import com.presentation.ui.login.viewmodel.LoginViewModel
 import kotlinx.android.synthetic.main.activity_login.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
-class LoginActivity : AppCompatActivity() {
+class AuthActivity : AppCompatActivity() {
 
     private val viewModel: LoginViewModel by viewModel()
 
@@ -51,9 +51,9 @@ class LoginActivity : AppCompatActivity() {
 
     private fun checkingViews() {
         btn_login.setOnClickListener {
-            if (!viewModel.isValidateUserField(loginUser.text.toString())) {
+            if (!viewModel.validateUser(loginUser.text.toString())) {
                 loginUser.error = ("Usuario Invalido")
-            } else if (!viewModel.isValidPasswordField(passwordEdit.text.toString())) {
+            } else if (!viewModel.validatePassword(passwordEdit.text.toString())) {
                 passwordEdit.error = ("Senha Invalida")
             } else {
                 group_progress.visibility = View.VISIBLE

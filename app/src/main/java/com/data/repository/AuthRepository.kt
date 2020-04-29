@@ -9,7 +9,7 @@ class AuthRepository (private val authApi: AuthApi){
 
     fun doLogin(user:String, password:String) : ApiResult<ResponseLogin> {
         return try {
-            val result = authApi.loginAsync(user, password).execute()
+            val result = authApi.login(user, password).execute()
             if (result.isSuccessful) {
                 result.body()?.let {
                     if (!it.error.code.isNullOrEmpty()) {
@@ -18,7 +18,7 @@ class AuthRepository (private val authApi: AuthApi){
                     return ApiResult.Success(it)
                 }
             }
-            ApiResult.Error(Throwable("Erro genérico de API"))
+            ApiResult.Error(Throwable("API Error"))
         } catch (e: Exception) {
             ApiResult.Error(e)
         }
